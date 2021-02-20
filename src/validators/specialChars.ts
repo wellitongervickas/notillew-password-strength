@@ -1,3 +1,3 @@
-const specialCharsValidator = () => {}
+const specialCharsValidator = () => {};
 
-export default specialCharsValidator
+export default specialCharsValidator;

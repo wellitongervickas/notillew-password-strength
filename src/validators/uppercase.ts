@@ -1,3 +1,3 @@
-const uppercaseValidator = () => {}
+const uppercaseValidator = () => {};
 
-export default uppercaseValidator
+export default uppercaseValidator;

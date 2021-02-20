@@ -1,3 +1,11 @@
-const lengthValidator = () => {}
+import { T, always, compose, __, cond, gte, curry } from 'ramda';
 
-export default lengthValidator
+const getLength = curry((password: String) => password.length);
+
+const lengthValidator = cond([
+  [compose(gte(__, 17), getLength), always('strong')],
+  [compose(gte(__, 13), getLength), always('medium')],
+  [T, () => 'weak']
+]);
+
+export default lengthValidator;

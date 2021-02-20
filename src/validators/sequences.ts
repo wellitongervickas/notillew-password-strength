@@ -1,3 +1,3 @@
-const sequencesValidator = () => {}
+const sequencesValidator = () => {};
 
-export default sequencesValidator
+export default sequencesValidator;

@@ -1,3 +1,3 @@
-const lowercaseValidator = () => {}
+const lowercaseValidator = () => {};
 
-export default lowercaseValidator
+export default lowercaseValidator;
