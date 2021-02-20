@@ -1,6 +1,6 @@
 import { T, always, compose, __, cond, gte, curry } from 'ramda';
 
-const getLength = curry((password: String) => password.length);
+const getLength = curry((password: String): Number => password.length);
 
 const lengthValidator = cond([
   [compose(gte(__, 17), getLength), always('strong')],
