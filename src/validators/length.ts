@@ -1,19 +1,17 @@
 import {
   T as Else,
   gte as greaterThanOrEqual,
-  compose as If,
-  always as Returns,
+  compose as When,
+  always as returns,
   __ as bypassArg,
   cond,
-  curry
+  prop as getProp
 } from 'ramda';
 
-const getLength = curry((password: String): Number => password.length);
-
 const lengthValidator = cond([
-  [If(greaterThanOrEqual(bypassArg, 17), getLength), Returns('strong')],
-  [If(greaterThanOrEqual(bypassArg, 13), getLength), Returns('medium')],
-  [Else, () => 'weak']
+  [When(greaterThanOrEqual(bypassArg, 17), getProp('length')), returns(2)],
+  [When(greaterThanOrEqual(bypassArg, 13), getProp('length')), returns(1)],
+  [Else, () => 0]
 ]);
 
 export default lengthValidator;
