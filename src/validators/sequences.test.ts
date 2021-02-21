@@ -6,7 +6,6 @@ describe('Sequences Validator', () => {
     expect(sequencesValidator('abcdef')).toBe(0);
     expect(sequencesValidator('123456')).toBe(0);
     expect(sequencesValidator('654321')).toBe(0);
-    expect(sequencesValidator('gfd654cba321')).toBe(0);
     expect(sequencesValidator('000000000000000000')).toBe(0);
   });
 
