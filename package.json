@@ -12,8 +12,7 @@
     "test": "jest ./src",
     "test:watch": "jest ./src --watch",
     "build": "tsc --build",
-    "clean": "rm -rf dist",
-    "npm:login": "npm-cli-login"
+    "clean": "rm -rf dist"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",

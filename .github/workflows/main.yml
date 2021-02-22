@@ -23,6 +23,5 @@ jobs:
 
       - name: Run publish
         run: |
-          echo ${{ secrets.IS_WORK }}
-          yarn npm-cli-login -u ${{secrets.NPM_USER}} -p ${{secrets.NPM_PASS}} -e ${{secrets.NPM_EMAIL}}
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc && npm publish --access public
+          yarn npm-cli-login -u ${{secrets.NPM_AUTH_USER}} -p ${{secrets.NPM_AUTH_PASS}} -e ${{secrets.NPM_AUTH_EMAIL}}
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc && npm publish --access public
