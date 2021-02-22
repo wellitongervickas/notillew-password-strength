@@ -11,6 +11,13 @@
 > 
 > npm install @notillew/password-strength
 
+
+### Run tests
+
+> yarn test
+> 
+> yarn test:watch
+
 ### Example outputs
     import passwordStrength from '@notillew/password-strength'
     
@@ -27,7 +34,7 @@
   
 
 #### Behavior 
-> Score should be be 0 to 10
+> Score should be 0 to 10
 #### Table
 
 > \< 4 weak
