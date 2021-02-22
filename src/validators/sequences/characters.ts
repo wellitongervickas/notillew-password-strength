@@ -1,15 +1,17 @@
-import { curry, compose, join, toLower, values, reverse } from 'lodash/fp';
+import { curry, values, compose, join, reverse, T, cond, always } from 'lodash/fp';
 import { ALPHABET } from './constants';
-import { matchList } from './../../utils/match';
+import { compare } from './../../utils/compare';
 
-export const isSequencialCharacters = curry((value: string): boolean => {
-  const words = compose(toLower, join(''), matchList(/\D/g))(value);
-  return words?.length > 0 && ALPHABET.includes(words);
-});
+const alphabetReversed = compose(join(''), reverse, values)(ALPHABET);
 
-export const isSequencialCharactersReverse = curry((value: string): boolean => {
-  const words = compose(toLower, join(''), matchList(/\D/g))(value);
-  const alphabet = compose(join(''), reverse, values)(ALPHABET);
+export const isSequencialChars = curry((comparator: string, value: string): boolean =>
+  compare(value, comparator, /\D/g)
+);
 
-  return words?.length > 0 && alphabet.includes(words);
-});
+export const sequencialCharsValidator = cond([
+  [isSequencialChars(ALPHABET), always(true)],
+  [isSequencialChars(alphabetReversed), always(true)],
+  [T, () => false]
+]);
+
+export default sequencialCharsValidator;

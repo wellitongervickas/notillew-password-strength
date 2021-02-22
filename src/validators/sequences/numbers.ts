@@ -1,16 +1,17 @@
-import { curry } from 'lodash/fp';
+import { curry, values, compose, join, reverse, T, cond, always } from 'lodash/fp';
 import { DECIMAL } from './constants';
-import { matchList } from './../../utils/match';
+import { compare } from './../../utils/compare';
 
-export const isSequencialNumbers = curry((value: string): boolean => {
-  const numbers = matchList(/\d/g, value).join('').toLocaleLowerCase();
+const decimalReversed = compose(join(''), reverse, values)(DECIMAL);
 
-  return numbers?.length > 0 && DECIMAL.includes(numbers);
-});
+export const isSequencialNumbers = curry((comparator: string, value: string): boolean =>
+  compare(value, comparator, /\d/g)
+);
 
-export const isSequencialNumbersReverse = curry((value: string): boolean => {
-  const numbers = matchList(/\d/g, value).join('').toLocaleLowerCase();
-  const decimal = Object.values(DECIMAL).reverse().join('');
+export const sequencialNumbersValidator = cond([
+  [isSequencialNumbers(DECIMAL), always(true)],
+  [isSequencialNumbers(decimalReversed), always(true)],
+  [T, () => false]
+]);
 
-  return numbers?.length > 0 && decimal.includes(numbers);
-});
+export default sequencialNumbersValidator;

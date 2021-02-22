@@ -1,4 +1,4 @@
-import { match, matchList } from './match';
+import { match, getMatched } from './match';
 
 describe('Utils match', () => {
   describe('match', () => {
@@ -11,13 +11,13 @@ describe('Utils match', () => {
     });
   });
 
-  describe('matchList', () => {
+  describe('getMatched', () => {
     it('should return an array of matched values', () => {
-      expect(matchList(/\D/g, 'abc')).toEqual(['a', 'b', 'c']);
+      expect(getMatched(/\D/g, 'abc')).toEqual(['a', 'b', 'c']);
     });
 
     it('should return a empty array when no match found', () => {
-      expect(matchList(/\D/g, '1234')).toEqual([]);
+      expect(getMatched(/\D/g, '1234')).toEqual([]);
     });
   });
 });
