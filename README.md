@@ -1,24 +1,38 @@
 
 # @notillew/password-strength
-> Created just for learn and pratices
++ Created just for learn and pratices
++ Typescript
++ Lodash 
++ Functional Programming
+
+### Install
+
+> yarn add @notillew/password-strength
+> 
+> npm install @notillew/password-strength
 
 ### Example outputs
     import passwordStrength from '@notillew/password-strength'
     
     expect(passwordStrength(passwordWeak)).toBe('weak')
     expect(passwordStrength(passwordMedium)).toBe('medium')
-    expect(passwordStrength(passwordStrong).toBe('strong')
+    expect(passwordStrength(passwordStrong)).toBe('strong')
 
-#### Matching 
+### Matching 
 
- - Match by length
- - Match by uppercase and lowercase
- - Match by special characters
- - Match by sequences, like: 123, abc, abc123, a1b2c3, !1a and beyond will decrease password level strength
+ - Length
+ - Uppercase and lowercase
+ - Special characters
+ - Sequences, like: 123, abc, abc123, a1b2c3 and beyond will decrease password level strength
   
 
-#### Strength score behavior 
-3.3 - weak
-3.3 ~ 6.6 - medium
-6 ~6 - Strong
+#### Behavior 
+> Score should be be 0 to 10
+#### Table
+
+> \< 4 weak
+> 
+> \>= 4 medium
+> 
+> \>= 8 Strong
 
