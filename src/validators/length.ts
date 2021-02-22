@@ -1,17 +1,9 @@
-import {
-  T as Else,
-  __ as bypassArgs,
-  gte as greaterThanOrEqual,
-  compose as When,
-  always as returns,
-  prop as getProp,
-  cond
-} from 'lodash/fp';
+import { T, __, gte, compose, always, prop, cond } from 'lodash/fp';
 
 const lengthValidator = cond<string, number>([
-  [When(greaterThanOrEqual(bypassArgs, 18), getProp('length')), returns(2)],
-  [When(greaterThanOrEqual(bypassArgs, 14), getProp('length')), returns(1)],
-  [Else, () => 0]
+  [compose(gte(__, 18), prop('length')), always(2)],
+  [compose(gte(__, 14), prop('length')), always(1)],
+  [T, () => 0]
 ]);
 
 export default lengthValidator;

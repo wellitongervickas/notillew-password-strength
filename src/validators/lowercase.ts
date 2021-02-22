@@ -1,9 +1,9 @@
-import { T as Else, always as returns, cond, curry } from 'lodash/fp';
+import { T, always, cond } from 'lodash/fp';
+import { match } from '../utils';
 
-const matchValue = curry((password: string): boolean => /[a-z]/g.test(password));
 const lowercaseValidator = cond<string, number>([
-  [matchValue, returns(2)],
-  [Else, () => 0]
+  [match(/[a-z]/g), always(2)],
+  [T, () => 0]
 ]);
 
 export default lowercaseValidator;

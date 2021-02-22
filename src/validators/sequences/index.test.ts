@@ -1,4 +1,4 @@
-import sequencesValidator from './sequences';
+import sequencesValidator from './';
 
 describe('Sequences Validator', () => {
   it('should be weak', () => {
@@ -10,8 +10,8 @@ describe('Sequences Validator', () => {
   });
 
   it('should be strong', () => {
-    expect(sequencesValidator('lsnujn17hsihda')).toBe(2);
-    expect(sequencesValidator('925d122d1962a2112')).toBe(2);
+    expect(sequencesValidator('loijnfsatqew')).toBe(2);
+    expect(sequencesValidator('925d12d068a861')).toBe(2);
     expect(sequencesValidator('78123yhd7@&DH@+15')).toBe(2);
   });
 });
