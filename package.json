@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
+  "author": "Welliton gervickas <wellitogervickas@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wellitongervickas/notillew-password-strength"
+  },
   "scripts": {
     "test": "jest ./src",
     "test:watch": "jest ./src --watch",

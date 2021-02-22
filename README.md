@@ -1,5 +1,7 @@
 
 # @notillew/password-strength
+[![CI](https://github.com/wellitongervickas/notillew-password-strength/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/wellitongervickas/notillew-password-strength/actions/workflows/main.yml)
+
 + Created just for learn and pratices
 + Typescript
 + Lodash 
