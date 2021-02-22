@@ -1,8 +1,8 @@
 import { T, always, cond } from 'lodash/fp';
 
-import { isRepeated } from './values';
 import sequencialCharsValidator from './characters';
 import sequencialNumbersValidator from './numbers';
+import { isRepeated } from './values';
 
 const sequencesValidator = cond<string, number>([
   [sequencialCharsValidator, always(0)],

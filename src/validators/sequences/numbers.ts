@@ -1,16 +1,12 @@
-import { curry, values, compose, join, reverse, T, cond, always } from 'lodash/fp';
+import { values, compose, join, reverse, T, cond, always, __ } from 'lodash/fp';
 import { DECIMAL } from './constants';
 import { compare } from './../../utils/compare';
 
-const decimalReversed = compose(join(''), reverse, values)(DECIMAL);
-
-export const isSequencialNumbers = curry((comparator: string, value: string): boolean =>
-  compare(value, comparator, /\d/g)
-);
+const regex = /\d/g;
 
 export const sequencialNumbersValidator = cond([
-  [isSequencialNumbers(DECIMAL), always(true)],
-  [isSequencialNumbers(decimalReversed), always(true)],
+  [compare(__, DECIMAL, regex), always(true)],
+  [compare(__, compose(join(''), reverse, values)(DECIMAL), regex), always(true)],
   [T, () => false]
 ]);
 
