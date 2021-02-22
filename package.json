@@ -12,7 +12,8 @@
     "test": "jest ./src",
     "test:watch": "jest ./src --watch",
     "build": "tsc --build",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "npm:login": "npm-cli-login"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
@@ -24,6 +25,7 @@
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
     "jest": "^26.6.3",
+    "npm-cli-login": "^0.1.1",
     "prettier": "^2.2.1",
     "ts-jest": "^26.5.1",
     "typescript": "^4.1.5"

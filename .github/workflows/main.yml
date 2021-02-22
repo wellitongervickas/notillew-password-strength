@@ -24,5 +24,5 @@ jobs:
       - name: Run publish
         run: |
           echo ${{ secrets.IS_WORK }}
-          npm install npm-cli-login && npm npm-cli-login -u ${{secrets.NPM_USER}} -p ${{secrets.NPM_PASS}} -e ${{secrets.NPM_EMAIL}}
+          yarn npm:login -u ${{secrets.NPM_USER}} -p ${{secrets.NPM_PASS}} -e ${{secrets.NPM_EMAIL}}
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc && npm publish --access public
