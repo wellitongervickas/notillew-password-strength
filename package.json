@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "test": "jest ./src",
-    "test:watch": "jest ./src --watch"
+    "test:watch": "jest ./src --watch",
+    "build": "tsc --build",
+    "clean": "rm -rf dist"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",

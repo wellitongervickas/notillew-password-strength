@@ -1,4 +1,4 @@
-import compare from './compare';
+import { compare } from './compare';
 
 describe('Validators sequences', () => {
   it('should return true when compare a list of sequencial numbers', () => {
