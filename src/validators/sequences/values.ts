@@ -1,7 +1,9 @@
-import { curry, sortedUniq, values, prop, lt } from 'lodash/fp';
+import { curry, sortedUniq, values, prop, lt, compose } from 'lodash/fp';
+
+const uniqValues = compose(sortedUniq, values);
 
 export const isRepeated = curry((password: string): boolean => {
-  return lt(prop('length', sortedUniq(values(password))), prop('length', password));
+  return lt(prop('length', uniqValues(password)), prop('length', password));
 });
 
 export default isRepeated;
