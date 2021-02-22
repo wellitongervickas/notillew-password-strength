@@ -6,7 +6,7 @@
   "author": "Welliton gervickas <wellitogervickas@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wellitongervickas/notillew-password-strength"
+    "url": "git+https://github.com/wellitongervickas/notillew-password-strength.git"
   },
   "scripts": {
     "test": "jest ./src",
