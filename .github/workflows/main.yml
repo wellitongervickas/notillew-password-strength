@@ -2,8 +2,6 @@ name: CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
   workflow_dispatch:
 
@@ -26,4 +24,4 @@ jobs:
       - name: Run publish
         run: |
           yarn npm-cli-login -u ${{secrets.NPM_AUTH_USER}} -p ${{secrets.NPM_AUTH_PASS}} -e ${{secrets.NPM_AUTH_EMAIL}}
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc && npm publish --access public
+          npm publish --access public
