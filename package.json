@@ -1,13 +1,18 @@
 {
   "name": "@notillew/password-strength",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "main": "dist/index.js",
   "license": "MIT",
   "author": "Welliton gervickas <wellitogervickas@gmail.com>",
+  "types": "types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wellitongervickas/notillew-password-strength.git"
   },
+  "files": [
+    "types/**/*.d.ts",
+    "dist/**/*.js"
+  ],
   "scripts": {
     "test": "jest ./src",
     "test:watch": "jest ./src --watch",
